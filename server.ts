@@ -19,12 +19,6 @@ app.use(async (context, next) => {
   await next()
 })
 
-app.use((context) => {
-  if (context.state) {
-    context.response.body = `Received data: ${JSON.stringify(context.state)}`
-  }
-})
-
 app.use(router.routes())
 app.use(router.allowedMethods())
 
